@@ -60,11 +60,8 @@
         <h3 class="text-3xl font-bold text-purple-800 mb-4">Galería de Avatares</h3>
         <p class="text-gray-700">Explora algunos estilos increíbles creados por la comunidad.</p>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-        <img src="https://tr.rbxcdn.com/04e51642f06e6e0638496d4f3e79cc16/150/150/AvatarHeadshot/Png" class="rounded-xl shadow hover:scale-105 transform transition" alt="Avatar 1">
-        <img src="https://tr.rbxcdn.com/b0aa9dc77a15c3cc6c35632526f2709b/150/150/AvatarHeadshot/Png" class="rounded-xl shadow hover:scale-105 transform transition" alt="Avatar 2">
-        <img src="https://tr.rbxcdn.com/f202b6cd2a68f1c8cb3830bd248a0376/150/150/AvatarHeadshot/Png" class="rounded-xl shadow hover:scale-105 transform transition" alt="Avatar 3">
-        <img src="https://tr.rbxcdn.com/e28f35b1d6630216b2f2687ce206553c/150/150/AvatarHeadshot/Png" class="rounded-xl shadow hover:scale-105 transform transition" alt="Avatar 4">
+      <div id="avatarGallery" class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <!-- Avatares cargados dinámicamente -->
       </div>
     </section>
 
@@ -79,5 +76,20 @@
     <footer class="bg-white text-center p-6 text-sm text-gray-500">
       &copy; 2025 ROBLOX Hub RP - Creado por fans para fans.
     </footer>
+
+    <!-- Script para cargar avatares reales -->
+    <script>
+      const userIds = [261, 1, 2, 3]; // Ejemplo de userIds reales de Roblox
+
+      const gallery = document.getElementById('avatarGallery');
+
+      userIds.forEach(id => {
+        const img = document.createElement('img');
+        img.src = `https://www.roblox.com/headshot-thumbnail/image?userId=${id}&width=150&height=150&format=png`;
+        img.alt = `Avatar ${id}`;
+        img.className = "rounded-xl shadow hover:scale-105 transform transition";
+        gallery.appendChild(img);
+      });
+    </script>
   </body>
 </html>
